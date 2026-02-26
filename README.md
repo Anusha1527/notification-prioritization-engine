@@ -157,11 +157,11 @@ This satisfies the requirement:
 ## 📊 API Endpoints
 ```
 | Endpoint        | Method | Description                              |
-|---------------|--------|------------------------------------------|
-| `/notify`     | POST   | Process notification event               |
-| `/logs`       | GET    | Retrieve audit logs                      |
-| `/update-rules` | POST | Update system rules dynamically          |
-| `/`           | GET    | Health check                             |
+|-----------------|--------|------------------------------------------|
+| `/notify`       | POST   | Process notification event               |
+| `/logs`         | GET    | Retrieve audit logs                      |
+| `/update-rules` | POST   | Update system rules dynamically          |
+| `/`             | GET    | Health check                             |
 ```
 ---
 
