@@ -6,7 +6,11 @@ from rules_store import rules
 from pydantic import BaseModel
 from typing import Optional, List
 
-app = FastAPI(title="Notification Prioritization Engine")
+app = FastAPI(
+    title="Notification Prioritization Engine",
+    description="AI-native system that classifies notifications into Now, Later, or Never with duplicate detection, fatigue control, and dynamic rule configuration.",
+    version="1.0.0"
+)
 
 # =========================
 # 1️⃣ Notification Endpoint
@@ -30,9 +34,23 @@ def process_notification(event: NotificationEvent):
 # =========================
 
 @app.get("/logs")
-def get_logs():
-    return decision_logs
+def get_logs(
+    user_id: Optional[str] = None,
+    limit: int = Query(10, ge=1)
+):
+    filtered_logs = decision_logs
 
+    if user_id:
+        filtered_logs = [
+            log for log in decision_logs
+            if log["user_id"] == user_id
+        ]
+
+    return {
+        "total_logs": len(filtered_logs),
+        "returned": min(limit, len(filtered_logs)),
+        "logs": filtered_logs[-limit:]
+    }
 # =========================
 # 3️⃣ Dynamic Rule Update API
 # =========================
@@ -64,6 +82,7 @@ def update_rules(new_rules: RuleUpdate):
 @app.get("/")
 def root():
     return {
-        "message": "Notification Prioritization Engine is running",
-        "current_rules": rules
+        "service": "Notification Prioritization Engine",
+        "status": "running",
+        "version": "1.0.0"
     }

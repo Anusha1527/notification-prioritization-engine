@@ -156,12 +156,15 @@ This satisfies the requirement:
 
 ## 📊 API Endpoints
 ```
-| Endpoint        | Method | Description                              |
-|-----------------|--------|------------------------------------------|
-| `/notify`       | POST   | Process notification event               |
-| `/logs`         | GET    | Retrieve audit logs                      |
-| `/update-rules` | POST   | Update system rules dynamically          |
-| `/`             | GET    | Health check                             |
+## 📡 API Endpoints
+
+| Endpoint        | Method | Description |
+|-----------------|--------|--------------------------------------------|
+| `/notify`       | POST   | Process notification and return decision   |
+| `/logs`         | GET    | Retrieve audit logs (supports filters)     |
+| `/rules`        | GET    | View current system configuration          |
+| `/update-rules` | POST   | Update system rules dynamically            |
+| `/`             | GET    | Health check                               |
 ```
 ---
 
