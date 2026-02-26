@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 from models import NotificationEvent
 from decision_engine import safe_decide, compute_score
 from logger import log_decision, decision_logs
