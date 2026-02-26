@@ -289,6 +289,7 @@ This Notification Prioritization Engine demonstrates:
 Built with scalability, configurability, and explainability in mind.
 
 ---
+<<<<<<< HEAD
 
 
 ## 🏗 Architecture Diagram
@@ -317,3 +318,5 @@ flowchart TD
     style H fill:#F44336,color:#fff,stroke:#333,stroke-width:1px
 ```
 **Figure:** High-level architecture of the Notification Prioritization Engine showing decision orchestration, duplicate handling, fatigue management, dynamic rule configuration, audit logging, and fallback safety.
+=======
+>>>>>>> ccf25b0ae65399cd0ddc077fb1f0ae2eacc98a91
