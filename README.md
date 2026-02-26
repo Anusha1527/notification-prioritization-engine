@@ -319,4 +319,3 @@ flowchart TD
 ```
 **Figure:** High-level architecture of the Notification Prioritization Engine showing decision orchestration, duplicate handling, fatigue management, dynamic rule configuration, audit logging, and fallback safety.
 =======
->>>>>>> ccf25b0ae65399cd0ddc077fb1f0ae2eacc98a91
