@@ -198,13 +198,13 @@ flowchart LR
 
 # 🧠 Decision Strategy
 
-| Condition | Decision |
-|------------|----------|
-| Expired notification | ❌ Never |
-| Exact / Near duplicate | ❌ Never |
-| High priority (score ≥ 70) | ✅ Now |
+| Condition | Decision                  |
+|------------|----------                |
+| Expired notification | ❌ Never.      |
+| Exact / Near duplicate | ❌ Never.    |
+| High priority (score ≥ 70) | ✅ Now   |
 | Fatigue threshold exceeded | ⏳ Later |
-| Medium / Low priority | ⏳ Later |
+| Medium / Low priority | ⏳ Later.     |
 
 ⚡ High-priority alerts override fatigue to avoid missing critical events.
 
@@ -243,7 +243,7 @@ This satisfies the requirement:
 ```
 ## 📡 API Endpoints
 
-| Endpoint        | Method | Description |
+| Endpoint        | Method | Description                                |
 |-----------------|--------|--------------------------------------------|
 | `/notify`       | POST   | Process notification and return decision   |
 | `/logs`         | GET    | Retrieve audit logs (supports filters)     |
