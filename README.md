@@ -333,9 +333,8 @@ uvicorn app:app --reload
 ```
 
 ### 📘 Open API Documentation
-```
 👉 [Open Swagger UI](http://127.0.0.1:8000/docs)
-```
+
 > ⚠️ Runs locally. Start the server before opening the link.
 
 ---
