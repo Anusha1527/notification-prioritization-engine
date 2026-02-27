@@ -20,7 +20,28 @@ This project implements an **AI-native Notification Prioritization Engine** that
 > ❌ **Never** – Suppress  
 
 The system is modular, explainable, configurable, and designed with scalability in mind.
+> 💡 **Goal:** Deliver the right notification to the right user at the right time.
 
+---
+
+## ✨ Key Features
+
+- ✅ Intelligent notification classification (Now / Later / Never)
+- 🔁 Exact & near-duplicate detection
+- 🔕 Alert fatigue prevention
+- ⚖️ Conflict-aware priority handling
+- ⚙️ Dynamic rule configuration via API
+- 🧾 Explainable decision logging
+- 🧯 Safe fallback mechanism
+---
+
+## 🛠 Tech Stack
+
+- **Backend:** FastAPI (Python)
+- **Data Validation:** Pydantic
+- **API Server:** Uvicorn
+- **Architecture Design:** Mermaid Diagrams
+- **Version Control:** Git & GitHub
 ---
 
 # 🏗 System Architecture
@@ -88,6 +109,35 @@ If the decision engine fails:
 
 ---
 
+## 🏗 Architecture Diagram
+
+```mermaid
+flowchart TD
+
+    A[Notification Source / Client App] --> B[FastAPI Layer]
+
+    B --> C[Decision Engine]
+
+    C --> D[Duplicate Engine]
+    C --> E[Priority Scoring]
+    C --> F[Conflict Resolution]
+    C --> G[Fatigue Engine]
+    C --> H[Fallback Layer]
+
+    C --> I[Audit Logger]
+    C --> J[Dynamic Rules Store]
+
+    %% Styling
+    style B fill:#4CAF50,color:#fff,stroke:#333,stroke-width:1px
+    style C fill:#2196F3,color:#fff,stroke:#333,stroke-width:1px
+    style I fill:#FF9800,color:#fff,stroke:#333,stroke-width:1px
+    style J fill:#9C27B0,color:#fff,stroke:#333,stroke-width:1px
+    style H fill:#F44336,color:#fff,stroke:#333,stroke-width:1px
+```
+
+Figure: High-level architecture of the Notification Prioritization Engine showing decision orchestration, duplicate handling, fatigue management, dynamic rule configuration, audit logging, and fallback safety.
+
+
 # 🔁 Data Flow
 ```
 Incoming Notification Event
@@ -106,7 +156,44 @@ Audit Logging
         ↓
     Response
 ```
+## 🔄 Notification Decision Data Flow
+```mermaid
+flowchart LR
 
+    A[📱 Notification Event<br/>Client / Service] --> B[🚀 FastAPI API Layer]
+
+    B --> C[🧠 Decision Engine]
+
+    C --> D[🔁 Duplicate Detection]
+    D --> C
+
+    C --> E[📊 Priority Scoring]
+    E --> C
+
+    C --> F[⚖️ Conflict Resolution]
+    F --> C
+
+    C --> G[🔕 Fatigue Engine]
+    G --> C
+
+    C --> H{Final Decision}
+
+    H -->|Now| I[✅ Deliver Notification]
+    H -->|Later| J[⏳ Queue / Delay]
+    H -->|Never| K[❌ Suppress]
+
+    H --> L[🧾 Audit Logger]
+    L --> M[(📦 Decision Logs Storage)]
+
+    C --> N[(⚙️ Dynamic Rules Store)]
+
+    %% Styling
+    style B fill:#4CAF50,color:#fff
+    style C fill:#2196F3,color:#fff
+    style L fill:#FF9800,color:#fff
+    style N fill:#9C27B0,color:#fff
+    style H fill:#F44336,color:#fff
+```
 ---
 
 # 🧠 Decision Strategy
@@ -245,11 +332,11 @@ pip install fastapi uvicorn
 uvicorn app:app --reload
 ```
 
-Open:
-
+### 📘 Open API Documentation
 ```
-http://127.0.0.1:8000/docs
+👉 [Open Swagger UI](http://127.0.0.1:8000/docs)
 ```
+> ⚠️ Runs locally. Start the server before opening the link.
 
 ---
 
@@ -290,33 +377,5 @@ This Notification Prioritization Engine demonstrates:
 Built with scalability, configurability, and explainability in mind.
 
 ---
-<<<<<<< HEAD
 
 
-## 🏗 Architecture Diagram
-
-```mermaid
-flowchart TD
-
-    A[Notification Source / Client App] --> B[FastAPI Layer]
-
-    B --> C[Decision Engine]
-
-    C --> D[Duplicate Engine]
-    C --> E[Priority Scoring]
-    C --> F[Conflict Resolution]
-    C --> G[Fatigue Engine]
-    C --> H[Fallback Layer]
-
-    C --> I[Audit Logger]
-    C --> J[Dynamic Rules Store]
-
-    %% Styling
-    style B fill:#4CAF50,color:#fff,stroke:#333,stroke-width:1px
-    style C fill:#2196F3,color:#fff,stroke:#333,stroke-width:1px
-    style I fill:#FF9800,color:#fff,stroke:#333,stroke-width:1px
-    style J fill:#9C27B0,color:#fff,stroke:#333,stroke-width:1px
-    style H fill:#F44336,color:#fff,stroke:#333,stroke-width:1px
-```
-**Figure:** High-level architecture of the Notification Prioritization Engine showing decision orchestration, duplicate handling, fatigue management, dynamic rule configuration, audit logging, and fallback safety.
-=======
