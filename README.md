@@ -377,4 +377,10 @@ Built with scalability, configurability, and explainability in mind.
 
 ---
 
+## 🎥 Project Execution Video
 
+Watch the demo here:
+
+(https://drive.google.com/drive/folders/1UxtS3JHUZRAOTmtERdAdGpIu06pj_3qv)
+
+---
