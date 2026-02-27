@@ -1,6 +1,4 @@
 # 🔔 Notification Prioritization Engine  
-### 🚀 Cyepro AI – Round 1 Solution  
-**Author:** Anusha V  
 
 ---
 
